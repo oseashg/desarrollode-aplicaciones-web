@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+	
+
+
+<script type="text/javascript">
+	
+$(document).ready(function(){
+
+
+$('#listProductos').DataTable( {
+        "ajax":{
+            type: 'get',
+            url: "http://apis.miapp.com/api/v1/productos",
+            dataSrc: 'data',
+            cache: true
+            },
+        columns: [
+            { data: 'codigo' },
+            { data: 'nombre' },
+            { data: 'categoria' },
+            { data: 'precio' }
+        ]
+
+    });
+
+
+});
+
+</script>
+
+
+</head>
+<body>
+<h1>LISTAR PRODUCTOS</h1>
+
+<table id="listProductos" class="display">
+	<thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+</table>
+
+
+
+</body>
+</html>
